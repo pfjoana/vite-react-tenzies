@@ -7,8 +7,8 @@ export default function App() {
 
   const [dice, setDice] = useState(GenerateDice())
 
+  // New Dice generator
   function GenerateDice() {
-
     function RandNum(){
       return (Math.ceil(Math.random() * 6))
     }
@@ -17,7 +17,7 @@ export default function App() {
     for (let i = 0; i < 10; i++){
       newArray.push({
         value:RandNum(),
-        isLocked:false,
+        isLocked: false,
         id: nanoid()
       })
     }
@@ -25,11 +25,31 @@ export default function App() {
   }
 
 
-    function handleClick(){
-      setDice(GenerateDice())
-    }
+  // roll dice, check if locked
+  function handleClick(){
+    setDice(prevDice => prevDice.map(die => {
+      return die.isLocked ? die : GenerateDice()
+    })
+    )
+  }
 
-    const diceElements = dice.map(element => <Dice key={element.id} value={element.value}/>)
+  // on Click lock dice - sent in props to component
+  function lockDice(id) {
+    setDice(prevDice => prevDice.map(die => {
+      die.id === id ? console.log(die) : console.log("not same")
+      return die.id === id ? { ...die, isLocked: !die.isLocked } : die
+    }))
+  }
+
+  // component instances to be displayed
+  const diceElements = dice.map(die => (
+    <Dice
+      key={die.id}
+      value={die.value}
+      isLocked = {die.isLocked}
+      lockDice={() => lockDice(die.id)}
+    />
+  ))
 
   return (
     <main>
