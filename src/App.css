@@ -7,16 +7,18 @@ body {
   background-color: #078c8e;
   padding: 20px;
   min-height: 100vh;
-
+  font-family: 'Karla', sans-serif;
 }
 
  main {
   margin: 5% auto;
+  padding: 3%;
   background-color: #F5F5F5;
   height: 70vh;
   width: 40vw;
   border-radius: 5px;
   display: flex;
+  flex-direction: column;
 }
 
 
@@ -44,4 +46,18 @@ body {
   margin: auto;
   color: black;
   font-weight: 400;
+}
+
+.roll-button {
+  width: 100px;
+  margin: 20% auto;
+  padding: 10px 15px;
+  font-size: 1.3em;
+  font-weight: 600;
+  background-color: #5035FF;
+  color: white;
+  border: 0;
+  border-radius: 4px;
+  box-shadow: 0 3px 7px rgba(0, 0, 0, 0.15);
+  cursor: pointer;
 }
