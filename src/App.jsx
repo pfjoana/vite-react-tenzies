@@ -2,6 +2,8 @@ import { useEffect, useState } from 'react'
 import Dice from './components/Dice'
 import {nanoid} from "nanoid"
 import './App.css'
+import Confetti from "react-confetti"
+
 
 export default function App() {
 
@@ -75,6 +77,7 @@ export default function App() {
 
   return (
     <main>
+      {finish && <Confetti/>}
       <h1>Tenzies</h1>
       <p className="rules">Roll until each die displays identical values. Tap individual dice to lock them in place with their current values before rolling again.</p>
       <div className="dice-grid">
