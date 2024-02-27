@@ -1,4 +1,4 @@
-import { useState } from 'react'
+import { useEffect, useState } from 'react'
 import Dice from './components/Dice'
 import {nanoid} from "nanoid"
 import './App.css'
@@ -6,37 +6,59 @@ import './App.css'
 export default function App() {
 
   const [dice, setDice] = useState(GenerateDice())
+  const [finish, setFinish] = useState(false)
 
-  // New Dice generator
-  function GenerateDice() {
-    function RandNum(){
-      return (Math.ceil(Math.random() * 6))
+  //*** to set Finish
+  useEffect(() => {
+    const allLocked = dice.every(die => die.isLocked)
+    //first to compare
+    const firstDie = dice[0].value
+    //compare all with the first
+    const allEqual = dice.every(die => die.value === firstDie)
+
+    if (allLocked && allEqual) {
+      setFinish(true)
     }
 
+  }, [dice])
+
+
+  //** New individual die generator
+  function GenerateOneDie(){
+    return {
+      value: Math.ceil(Math.random() * 6),
+      isLocked: false,
+      id: nanoid()
+    }
+  }
+
+  //*** New 10 Dice generator
+  function GenerateDice() {
     const newArray = []
     for (let i = 0; i < 10; i++){
-      newArray.push({
-        value:RandNum(),
-        isLocked: false,
-        id: nanoid()
-      })
+      newArray.push(GenerateOneDie())
     }
     return newArray
   }
 
 
-  // roll dice, check if locked
+  //*** roll dice
   function handleClick(){
-    setDice(prevDice => prevDice.map(die => {
-      return die.isLocked ? die : GenerateDice()
-    })
-    )
+
+    if(!finish) {
+      setDice(prevDice => prevDice.map(die => {
+        return die.isLocked ? die : GenerateDice()
+      }))
+    } else {
+      // re start game
+      setFinish(false);
+      setDice(GenerateDice())
+    }
   }
 
   // on Click lock dice - sent in props to component
   function lockDice(id) {
     setDice(prevDice => prevDice.map(die => {
-      die.id === id ? console.log(die) : console.log("not same")
       return die.id === id ? { ...die, isLocked: !die.isLocked } : die
     }))
   }
