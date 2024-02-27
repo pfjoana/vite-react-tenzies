@@ -23,6 +23,16 @@ body {
   flex-direction: column;
 }
 
+main h1 {
+  margin: 3% auto;
+}
+
+main p {
+  font-size: 1rem;
+  text-align: center;
+  font-family: 'Inter', sans-serif;
+}
+
 
 .dice-grid {
   margin: auto;
@@ -46,14 +56,13 @@ body {
 
 .die h2 {
   margin: auto;
-  color: black;
   font-weight: 400;
 }
 
 .roll-button {
-  width: 100px;
-  margin: 20% auto;
-  padding: 10px 15px;
+  /* width: 100px; */
+  margin: auto;
+  padding: 10px 25px;
   font-size: 1.3em;
   font-weight: 600;
   background-color: #5035FF;

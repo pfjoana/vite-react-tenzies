@@ -47,7 +47,7 @@ export default function App() {
 
     if(!finish) {
       setDice(prevDice => prevDice.map(die => {
-        return die.isLocked ? die : GenerateDice()
+        return die.isLocked ? die : GenerateOneDie()
       }))
     } else {
       // re start game
@@ -75,13 +75,14 @@ export default function App() {
 
   return (
     <main>
+      <h1>Tenzies</h1>
+      <p className="rules">Roll until each die displays identical values. Tap individual dice to lock them in place with their current values before rolling again.</p>
       <div className="dice-grid">
           {diceElements}
       </div>
 
-      <button className="roll-button"
-      onClick={handleClick}>
-        Roll
+      <button className="roll-button" onClick={handleClick}>
+        {finish ? "New Game" : "Roll"}
       </button>
 
     </main>
