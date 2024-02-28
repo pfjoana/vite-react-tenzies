@@ -6,19 +6,33 @@ body {
   margin: 0;
   background-color: #078c8e;
   padding: 20px;
-  min-height: 100vh;
+  height: 100vh;
   font-family: 'Karla', sans-serif;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
 
  main {
-  margin: 5% auto;
-  padding: 3%;
+  padding: 5%;
   background-color: #F5F5F5;
+  min-height: 500px;
   height: 70vh;
+  min-width: 500px;
   width: 40vw;
   border-radius: 5px;
   display: flex;
   flex-direction: column;
+}
+
+main h1 {
+  margin: 3% auto;
+}
+
+main p {
+  font-size: 1rem;
+  text-align: center;
+  font-family: 'Inter', sans-serif;
 }
 
 
@@ -44,14 +58,12 @@ body {
 
 .die h2 {
   margin: auto;
-  color: black;
   font-weight: 400;
 }
 
 .roll-button {
-  width: 100px;
-  margin: 20% auto;
-  padding: 10px 15px;
+  margin: auto;
+  padding: 10px 25px;
   font-size: 1.3em;
   font-weight: 600;
   background-color: #5035FF;
