@@ -77,7 +77,7 @@ export default function App() {
 
   return (
     <main>
-      {finish && <Confetti/>}
+      {finish && <Confetti width={document.documentElement.clientWidth} height={window.innerHeight}/>}
       <h1>Tenzies</h1>
       <p className="rules">Roll until each die displays identical values. Tap individual dice to lock them in place with their current values before rolling again.</p>
       <div className="dice-grid">

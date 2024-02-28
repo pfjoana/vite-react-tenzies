@@ -6,13 +6,15 @@ body {
   margin: 0;
   background-color: #078c8e;
   padding: 20px;
-  min-height: 100vh;
+  height: 100vh;
   font-family: 'Karla', sans-serif;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
 
  main {
-  margin: 5% auto;
-  padding: 3%;
+  padding: 5%;
   background-color: #F5F5F5;
   min-height: 500px;
   height: 70vh;
@@ -60,7 +62,6 @@ main p {
 }
 
 .roll-button {
-  /* width: 100px; */
   margin: auto;
   padding: 10px 25px;
   font-size: 1.3em;
