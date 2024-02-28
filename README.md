@@ -33,6 +33,15 @@ npm run dev
 ```
 
 5. Open the displayed localhost to play the Tenzies game.
+   
+![imagem](https://github.com/pfjoana/vite-react-tenzies/assets/124532595/31ed1520-d28a-4ed3-ad1b-d98164690f4f)
 
-![imagem](https://github.com/pfjoana/vite-react-tenzies/assets/124532595/37d5c9ae-ff76-4f50-8e99-3a746f37ca02)
+Appearance of dice locked:
 
+![imagem](https://github.com/pfjoana/vite-react-tenzies/assets/124532595/e2299ed7-48ca-49a6-adfb-9e5591787042)
+
+Confetti effect at the end:
+
+![imagem](https://github.com/pfjoana/vite-react-tenzies/assets/124532595/2bfe6222-dbe9-472d-9de7-01e2051bc124)
+
+## ...and the final step... Have fun! ;)
