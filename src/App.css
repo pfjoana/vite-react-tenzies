@@ -4,7 +4,9 @@
 
 body {
   margin: 0;
-  background-color: #078c8e;
+  /* background-color: #078c8e; */
+  background-image: linear-gradient(hsl(252, 100%, 67%), hsla(241, 81%, 54%), hsla(256, 72%, 46%, 1));
+
   padding: 20px;
   height: 100vh;
   font-family: 'Karla', sans-serif;
@@ -15,7 +17,7 @@ body {
 
  main {
   padding: 5%;
-  background-color: #F5F5F5;
+  background-color: #f5f5f5c2;
   min-height: 500px;
   height: 70vh;
   min-width: 500px;
@@ -26,10 +28,12 @@ body {
 }
 
 main h1 {
+  color: #1c0d7d;
   margin: 3% auto;
 }
 
 main p {
+  color: #1c0d7d;
   font-size: 1rem;
   text-align: center;
   font-family: 'Inter', sans-serif;
@@ -48,6 +52,7 @@ main p {
   width: 60px;
   height: 60px;
   background-color: white;
+  color: #1c0d7d;
   box-shadow: 0px 2px 5px rgba(0,0,0, 15%);
   border-radius: 4px;
   cursor: pointer;
